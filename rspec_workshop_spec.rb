@@ -27,7 +27,7 @@ require 'spec_helper'
 require 'capybara/rspec'
 
 feature 'Visitor' do
-  scenario 'with valid email and password' do
+  scenario ' sign up with valid email and password' do
     visit new_user_registration_path
     fill_in 'user[username]', with: username if username.present?
     fill_in 'user[email]', with: email
@@ -47,7 +47,7 @@ require 'spec_helper'
 require 'capybara/rspec'
 
 feature 'Visitor' do
-  scenario 'with valid email and password' do
+  scenario ' sign up with valid email and password' do
     visit new_user_registration_path
     fill_in 'user[username]', with: username if username.present?
     fill_in 'user[email]', with: email
@@ -66,7 +66,7 @@ require 'spec_helper'
 require 'capybara/rspec'
 
 feature 'Visitor' do
-  scenario 'with valid email and password' do
+  scenario ' sign up with valid email and password' do
     visit new_user_registration_path
     fill_in 'user[username]', with: username if username.present?
     fill_in 'user[email]', with: email
@@ -88,9 +88,10 @@ feature 'Visitor' do
     expect(current_path).to eq '/template'
   end
 end
+
 # 6. Split the sign up, sign in, sign out test. Explain what happens between two scenario. ( database cleaner )
 feature 'Visitor' do
-  scenario 'with valid email and password' do
+  scenario ' sign up with valid email and password' do
     visit new_user_registration_path
     fill_in 'user[username]', with: username if username.present?
     fill_in 'user[email]', with: email
@@ -114,9 +115,10 @@ feature 'Visitor' do
 end
 
 
-# 5. The test failed. (because there's not user inside database)
+# 7. The test failed. (because there's not user inside database)
 # -> Use binding.pry and save_and_open_screenshot to debug the test
 # -> Use focus
+# -> Explain why the test failed.
 
   # This will fail
   scenario 'sign in then sign out' do
@@ -133,10 +135,10 @@ end
   end
 end
 
-# 6. Explain what is factory and how we use it to insert data.
+# 8. Explain what is factory and how we use it to insert data.
 
 feature 'Visitor' do
-  scenario 'with valid email and password' do
+  scenario ' sign up with valid email and password' do
     visit new_user_registration_path
     fill_in 'user[username]', with: username if username.present?
     fill_in 'user[email]', with: email
@@ -159,10 +161,10 @@ feature 'Visitor' do
   end
 end
 
-# The second test are really testing two stuff. Demostrate how to refactor the test.
+# 9. The second test are really testing two stuff. Demostrate how to refactor the test.
 
 feature 'Visitor' do
-  scenario 'with valid email and password' do
+  scenario ' sign up with valid email and password' do
     visit new_user_registration_path
     fill_in 'user[username]', with: username if username.present?
     fill_in 'user[email]', with: email
@@ -198,10 +200,10 @@ feature 'Visitor' do
   end
 end
 
-# Explain what is support file and put the sign_in and sign_out method into a module.
+# 10. Explain what is support file and put the sign_in and sign_out method into a module.
 
 feature 'Visitor' do
-  scenario 'with valid email and password' do
+  scenario ' sign up with valid email and password' do
     visit new_user_registration_path
     fill_in 'user[username]', with: username if username.present?
     fill_in 'user[email]', with: email
@@ -240,13 +242,13 @@ module Session
   end
 end
 
-# 8. Sign up vs Sign in/Sign out are really two context. Organize the test using context.
+# 11. Sign up vs Sign in/Sign out are really two context. Organize the test using context.
 # -> Explain what is context
 # -> Explain the scope of context
 
 feature 'Visitor' do
   context 'registration' do
-    scenario 'with valid email and password' do
+    scenario ' sign up with valid email and password' do
       visit new_user_registration_path
       fill_in 'user[username]', with: username if username.present?
       fill_in 'user[email]', with: email
@@ -272,13 +274,13 @@ feature 'Visitor' do
   end
 end
 
-# 9. Signout and Signin are using factory. Refactor it by using let.
+# 12. Signout and Signin are using factory. Refactor it by using let.
 # -> Explain what is let
 # -> Explain the different of let and let!
 
 feature 'Visitor' do
   context 'registration' do
-    scenario 'with valid email and password' do
+    scenario ' sign up with valid email and password' do
       visit new_user_registration_path
       fill_in 'user[username]', with: username if username.present?
       fill_in 'user[email]', with: email
@@ -303,13 +305,13 @@ feature 'Visitor' do
   end
 end
 
-#     sign in and sign out test are using sign_in method, refactor it by using before
+#  13. sign in and sign out test are using sign_in method, refactor it by using before
 #  -> Explain what is before block
 #  -> Explain the different between before(:each) and before(:all)
 
 feature 'Visitor' do
   context 'registration' do
-    scenario 'with valid email and password' do
+    scenario ' sign up with valid email and password' do
       visit new_user_registration_path
       fill_in 'user[username]', with: username if username.present?
       fill_in 'user[email]', with: email
@@ -333,11 +335,11 @@ feature 'Visitor' do
   end
 end
 
-# Rewrite the example into steps
+# 14. Rewrite the example into steps
 
 feature 'Visitor' do
   context 'registration' do
-    scenario 'with valid email and password' do
+    scenario ' sign up with valid email and password' do
       visit new_user_registration_path
       fill_in 'user[username]', with: username if username.present?
       fill_in 'user[email]', with: email
